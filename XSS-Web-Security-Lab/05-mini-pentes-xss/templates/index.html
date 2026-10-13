@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Web App</title>
+</head>
+
+<body>
+
+    <h1>Mini Web App</h1>
+
+    <h2>Search</h2>
+
+    <form method="GET">
+        <input type="text" name="search" placeholder="Search">
+        <button type="submit">Search</button>
+    </form>
+
+    <p>
+        Search result: {{ search }}
+    </p>
+
+    <hr>
+
+    <h2>Profile</h2>
+
+    <form method="POST">
+
+        <label>Username</label>
+        <br>
+
+        <input
+            type="text"
+            name="username"
+            value="{{ username }}"
+        >
+
+        <br><br>
+
+        <label>Comment</label>
+        <br>
+
+        <textarea name="comment"></textarea>
+
+        <br><br>
+
+        <button type="submit">Update</button>
+
+    </form>
+
+    <hr>
+
+    <h3>Preview</h3>
+
+    <p>
+        User: {{ username }}
+    </p>
+
+    <div>
+        {{ comment }}
+    </div>
+
+</body>
+
+</html>

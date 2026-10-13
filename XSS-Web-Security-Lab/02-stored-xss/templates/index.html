@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stored XSS Lab</title>
+</head>
+
+<body>
+
+    <h1>Stored XSS Lab</h1>
+
+    <form method="POST">
+
+        <label>Username</label>
+        <br>
+        <input type="text" name="username">
+
+        <br><br>
+
+        <label>Comment</label>
+        <br>
+        <textarea name="comment"></textarea>
+
+        <br><br>
+
+        <button type="submit">Submit Comment</button>
+
+    </form>
+
+    <hr>
+
+    <h2>Comments</h2>
+
+    {% for comment in comments %}
+
+        <div>
+            <strong>{{ comment["username"] }}</strong>
+
+            <p>
+                {{ comment["comment"] | safe }} 
+            </p>
+        </div>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
